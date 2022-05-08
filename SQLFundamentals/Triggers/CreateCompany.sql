@@ -1,0 +1,7 @@
+﻿CREATE TRIGGER Employee_INSERT
+ON Employee
+AFTER INSERT
+AS
+INSERT INTO Company(AddressId, Name)
+SELECT AddressId, CompanyName
+FROM INSERTED
